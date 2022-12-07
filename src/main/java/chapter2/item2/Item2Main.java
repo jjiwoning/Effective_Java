@@ -1,5 +1,9 @@
 package chapter2.item2;
 
+import static chapter2.item2.NyPizza.Size.SMALL;
+import static chapter2.item2.Pizza.Topping.ONION;
+import static chapter2.item2.Pizza.Topping.SAUSAGE;
+
 /**
  * 아이템2. 생성자에 매개변수가 많다면 빌더를 고려하라
  */
@@ -17,10 +21,11 @@ public class Item2Main {
         item2JavaBeans.setServings(50);
 
         System.out.println("========Lombok 빌더 패턴 사용========");
-        Item2BuilderLombok item2BuilderLombok = Item2BuilderLombok.builder()
-                .servings(40)
-                .servingSize(50)
-                .fat(50)
-                .build();
+        Item2BuilderLombok build = Item2BuilderLombok.builder().build();
+        System.out.println(build.toString());
+
+        System.out.println("=========MyPizza 호출============");
+        NyPizza nyPizza = new NyPizza.Builder(SMALL)
+                .addTopping(SAUSAGE).addTopping(ONION).build();
     }
 }
