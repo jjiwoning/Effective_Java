@@ -11,8 +11,12 @@ public class Phone implements Cloneable{
     }
 
     @Override
-    public Phone clone() throws CloneNotSupportedException {
-        return (Phone) super.clone();
+    public Phone clone() {
+        try {
+            return (Phone) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 
     @Override
