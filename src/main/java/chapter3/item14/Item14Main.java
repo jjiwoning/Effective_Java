@@ -10,5 +10,9 @@ public class Item14Main {
         int[] arr = new int[]{3, 4, 5, 1, 2};
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
+
+        System.out.println("=====================================");
+
+
     }
 }
